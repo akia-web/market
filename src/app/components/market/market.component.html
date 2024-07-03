@@ -1,0 +1,30 @@
+<div class="flex column">
+    <div class="sidewalk"></div>
+    <div class="grid-3">
+        @for (zone of market.zone; track zone) {
+            <div class="zone">
+    
+                @for(line of zone.zone; track line){
+                    <div class="flex line">
+                        @for(case of line.line; track case){
+                            @if(case.equipment === 'tapis'){
+                                <div #equipementTapis class="case" [style.background-color]="case.color">
+                                    <img class="equipment" src="welcolme.png" alt="">
+                                </div> 
+                            }@else{
+                                <div class="case" [style.background-color]="case.color">
+                                    
+                                </div> 
+                            }
+                                             
+                        }
+                    </div>
+                }
+            
+            </div>
+        }
+    </div>
+    <div class="sidewalk"></div>
+</div>
+
+
