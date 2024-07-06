@@ -1,41 +1,41 @@
 <div class="flex column container-jeu">
-    <div class="sidewalk">
-    </div>
-    <div class="grid-3">
-        @for (map of market.zone; track map) {
-            <div class="zone">
-    
-                @for(line of map.line; track line){
-                    <div class="flex line">
-                        @for(case of line; track case){
-                            @if(case.equipment === 'tapis'){
-                                <div #equipementTapis class="case" [style.background-color]="case.color">
-                                    <img class="equipment" src="welcolme.png" alt="">
-                                </div> 
-                            }@else{
-                                <div class="case" [style.background-color]="case.color">
-                                    
-                                </div> 
-                            }                                            
-                        }
-                    </div>
+  <div class="sidewalk">
+  </div>
+  <div class="grid-3">
+    @for (map of market.zone; track map) {
+      <div class="zone">
+
+        @for (line of map.line; track line) {
+          <div class="flex line">
+            @for (case of line; track case) {
+              <div class="case"
+                   [style.background-color]="case.color"
+                   [style.background-image]="'url(' + case.equipment + '.png)'"
+                   [id]="case.equipment === 'tapis' ? 'equipementTapis' : ''"
+              >
+                @for (perso of case.person; track perso) {
+                  <img class="perso" src="{{perso.design}}.png" alt="">
                 }
-            
-            </div>
+              </div>
+            }
+          </div>
         }
-    </div>
-    <div class="flex line">
-        @for (case of sidewalk; track case) {
-            <div class="case" [style.background-color]="case.color">
-                @if(case.person.length > 0){
-                    @for(perso of case.person; track perso){
-                        <img class="perso" src="{{perso.design}}.png" alt="">
-                    }
-                   
-                }
-            </div>
+
+      </div>
+    }
+  </div>
+  <div class="flex line">
+    @for (case of sidewalk; track case) {
+      <div class="case" [style.background-color]="case.color">
+        @if (case.person.length > 0) {
+          @for (perso of case.person; track perso) {
+            <img class="perso" src="{{perso.design}}.png" alt="">
+          }
+
         }
-    </div>
+      </div>
+    }
+  </div>
 </div>
 
 

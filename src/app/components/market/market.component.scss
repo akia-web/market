@@ -1,37 +1,33 @@
-.case{
-    width: 50px;
-    height: 100%;
-    position: relative;
-    // border: 1px solid black
+.case {
+  width: 50px;
+  height: 100%;
+  position: relative;
+  background-size: 50px;
+  // border: 1px solid black
 }
 
-.line{
-    height: 50px;
+.line {
+  height: 50px;
 }
 
-
-.equipment{
-    width: 50px;
-    height: 50px;
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.grid-3{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.sidewalk {
+  height: 100px;
+  background-color: #9F8D81;
+  width: calc((50px * 10) * 3);
 }
 
-.sidewalk{
-    height: 100px;
-    background-color: #9F8D81;
-    width: calc((50px * 10) * 3);
+.container-jeu {
+  max-width: 1500px;
 }
 
-.container-jeu{
-    max-width: 1500px;
-}
-
-.perso{
-    width: 50px;
-    height: 50px;
-    position: absolute;
+.perso {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 99;
 }

@@ -1,15 +1,14 @@
-import {Injectable, signal} from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ComputerService {
+  constructor() {}
 
-  constructor() { }
-  openDesktop = signal(false);
+  openDesktop: WritableSignal<boolean> = signal(false);
 
-  toggle() {
+  toggle(): void {
     this.openDesktop.set(!this.openDesktop());
   }
-
 }
