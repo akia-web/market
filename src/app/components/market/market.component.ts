@@ -119,8 +119,7 @@ export class MarketComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-      this.scrollToEquipementTapis();
-      //TODO
+      this.scrollToEquipementTapis()
   }
 
 }
