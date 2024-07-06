@@ -1,4 +1,4 @@
-import { MarketZone } from "./marketZone";
+import {MarketZone} from "./marketZone";
 
 export interface Market {
     money: number,

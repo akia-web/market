@@ -1,5 +1,5 @@
-import { Component} from '@angular/core';
-import { ComputerService } from '../../services/computer.service';
+import {Component} from '@angular/core';
+import {ComputerService} from '../../services/computer.service';
 
 @Component({
   selector: 'app-nav-bar',

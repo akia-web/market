@@ -1,5 +1,4 @@
-import { Ground } from "./ground";
-import { Line } from "./line";
+import {Ground} from "./ground";
 
 export interface MarketZone {
     locked: boolean;

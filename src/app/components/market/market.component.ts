@@ -1,9 +1,8 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { Ground } from '../../models/ground';
-import { Market } from '../../models/market';
-import { MarketZone } from '../../models/marketZone';
-import { Line } from '../../models/line';
-import { ClientMarket } from '../../classes/client';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Ground} from '../../models/ground';
+import {Market} from '../../models/market';
+import {MarketZone} from '../../models/marketZone';
+import {ClientMarket} from '../../classes/client';
 
 @Component({
   selector: 'app-market',
@@ -20,7 +19,7 @@ export class MarketComponent implements OnInit, AfterViewInit {
   market: Market = {
     money : 0,
     zone : []
-  } 
+  }
   idClient: number = 1
 
   numberLineByZone : number = 6;
@@ -33,9 +32,9 @@ export class MarketComponent implements OnInit, AfterViewInit {
   scrollToEquipementTapis(): void {
     if (this.equipementTapisElement && this.equipementTapisElement.nativeElement) {
       this.equipementTapisElement.nativeElement.scrollIntoView(
-        { behavior: 'smooth', 
-          block: 'start', 
-          inline: 'center' 
+        { behavior: 'smooth',
+          block: 'start',
+          inline: 'center'
         }
       );
     }
@@ -52,11 +51,11 @@ export class MarketComponent implements OnInit, AfterViewInit {
       const ground : Ground= {
         color: '#9F8D81',
         locked :false,
-        equipment:null, 
+        equipment:null,
         person:[],
-      } 
+      }
       this.sidewalk.push(ground)
-    } 
+    }
   }
 
   createCases(z: number, h: number, w: number, zone: MarketZone, ): Ground{
@@ -65,8 +64,8 @@ export class MarketComponent implements OnInit, AfterViewInit {
         zone.type = 'garden';
         ground.color = "#5CB85C";
       }
-      
-      
+
+
       if(z === 7){
         ground.locked = false;
         ground.color = "#E2B27A";
@@ -85,7 +84,7 @@ export class MarketComponent implements OnInit, AfterViewInit {
     for(let h: number  = 0; h< this.numberLineByZone; h++){
       const line = []
       for(let w: number = 0; w< this.numberCaseByZone; w++){
-    
+
         const ground = this.createCases(z, h, w, zone);
         line.push(ground);
       }
@@ -112,16 +111,16 @@ export class MarketComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
       this.createMarket();
       this.createSideWalk();
-      
+
       const newClient:ClientMarket = new ClientMarket(0, null,  'out', 'perso1', 1)
       this.sidewalk[0].person.push(newClient)
       this.sidewalk[0].person[0].avancer(this.sidewalk, this.market)
-     
+
   }
 
   ngAfterViewInit(): void {
-      this.scrollToEquipementTapis();     
-
+      this.scrollToEquipementTapis();
+      //TODO
   }
 
 }

@@ -1,10 +1,10 @@
-import { Component, OnDestroy, OnInit, computed, effect } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MarketComponent } from './components/market/market.component';
-import { DesktopComponent } from './components/desktop/desktop.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { ComputerService } from './services/computer.service';
-import { Subscription } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {MarketComponent} from './components/market/market.component';
+import {DesktopComponent} from './components/desktop/desktop.component';
+import {NavBarComponent} from './components/nav-bar/nav-bar.component';
+import {ComputerService} from './services/computer.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit, OnDestroy{
     //   console.log('Desktop open:', this.desktopOpen);
     // });
   }
-  
+
   isOpenDesktop(){
     return this.computerService.openDesktop()
   }

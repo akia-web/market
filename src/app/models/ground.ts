@@ -1,4 +1,4 @@
-import { ClientMarket } from "../classes/client";
+import {ClientMarket} from "../classes/client";
 
 export interface Ground {
     color: string;

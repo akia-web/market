@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { ComputerService } from '../../services/computer.service';
+import {Component} from '@angular/core';
+import {ComputerService} from '../../services/computer.service';
 
 @Component({
   selector: 'app-desktop',
@@ -9,9 +9,10 @@ import { ComputerService } from '../../services/computer.service';
   styleUrl: './desktop.component.scss'
 })
 export class DesktopComponent {
-  constructor(public computerService: ComputerService){}
+  constructor(public computerService: ComputerService) {
+  }
 
-  closeDestop(): void{
+  closeDestop(): void {
     this.computerService.toggle();
   }
 
